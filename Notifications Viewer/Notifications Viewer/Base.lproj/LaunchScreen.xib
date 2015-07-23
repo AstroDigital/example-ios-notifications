@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="gt5-pL-ooZ">
+                    <rect key="frame" x="93" y="276" width="228" height="183"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="228" id="Kjc-GU-wq7"/>
+                        <constraint firstAttribute="height" constant="183" id="YpG-q0-oBl"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alien1.png" translatesAutoresizingMaskIntoConstraints="NO" id="QJl-If-fuJ">
+                    <rect key="frame" x="221" y="608" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="7J1-H8-XXQ"/>
+                        <constraint firstAttribute="width" constant="240" id="ga7-du-32e"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.1843137255" green="0.27450980390000002" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="gt5-pL-ooZ" secondAttribute="centerX" id="BKL-RD-1vl"/>
+                <constraint firstItem="gt5-pL-ooZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="126" id="Nnj-nV-NEA"/>
+                <constraint firstItem="gt5-pL-ooZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="148" id="Ocp-tw-9Gt"/>
+                <constraint firstAttribute="trailing" secondItem="QJl-If-fuJ" secondAttribute="trailing" constant="-47" id="RtQ-t9-Ccz"/>
+                <constraint firstAttribute="bottom" secondItem="gt5-pL-ooZ" secondAttribute="bottom" constant="149" id="VZK-c1-UMx"/>
+                <constraint firstAttribute="bottom" secondItem="QJl-If-fuJ" secondAttribute="bottom" id="cvn-eo-LZI"/>
+                <constraint firstAttribute="centerY" secondItem="gt5-pL-ooZ" secondAttribute="centerY" id="eUd-CC-sqe"/>
+                <constraint firstAttribute="trailing" secondItem="gt5-pL-ooZ" secondAttribute="trailing" constant="126" id="sav-Ev-dAF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Nnj-nV-NEA"/>
+                    <exclude reference="Ocp-tw-9Gt"/>
+                    <exclude reference="VZK-c1-UMx"/>
+                    <exclude reference="sav-Ev-dAF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alien1.png" width="635" height="696"/>
+        <image name="logo.png" width="542" height="400"/>
+    </resources>
+</document>
