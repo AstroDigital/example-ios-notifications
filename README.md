@@ -6,10 +6,10 @@ The code contained in this repository is an example of how you would go about im
 ![](https://cloud.githubusercontent.com/assets/848934/10023289/51e3ab30-611f-11e5-8931-7c4b4cefef6c.gif)
 
 Specifically:
-- Receiving a list of all the active Notifications for an account
-- Dismissing Notifications
-- Publishing imagery from a Notification
-- Creating a new Alert from your location
+- Receiving a list of all the active Notifications for an account [`/notifications`](http://docs.astrodigital.com/docs/notifications)
+- Dismissing Notifications [`/notifications/:id/dismiss`](http://docs.astrodigital.com/docs/notificationsdismissid)
+- Publishing imagery from a Notification [`/publish`](http://docs.astrodigital.com/docs/publish)
+- Creating a new Alert from your location that will notify you when new imagery intersects with where you are standing [`/alerts`](http://docs.astrodigital.com/docs/alerts-1)
 
 You need to be familiar with the [iOS SDK](https://developer.apple.com/ios/download/) and [Xcode](https://developer.apple.com/xcode/) to work with this example. It is commented for easy reading and learning.
 
