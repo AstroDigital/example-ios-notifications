@@ -27,5 +27,10 @@ You will need to provide valid variables in the AstroDigital.plist file.
 | mapboxToken | String | Valid Mapbox token for use with SDK |
 | basemap | String | Valid basemap to use for maps |
 
+## Offline Caching
+The project contains an example of how to control offline caching (subject to Astro Digital Terms of Service) so that you can build an application that works even without a network connection.
+
+*Note that offline caching is not available with the latest Mapbox iOS SDK.*
+
 ## Caveats
 There are many things that go into making an outstanding iOS app experience, and this example is missing many of them. It's not intended to be a living, standalone application but rather to show off how to integrate Astro Digital services within an iOS environment. 

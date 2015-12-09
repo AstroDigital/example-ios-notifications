@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "RMTileCache.h"
 
 @interface DetailViewController ()
 
@@ -43,15 +44,15 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         
-        NSError *error;
-        
         // Setup Mapbox instance
         [[RMConfiguration sharedInstance] setAccessToken:self.ADDict[@"mapboxToken"]];
         RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:self.ADDict[@"basemap"]];
         
         CGRect frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + self.view.frame.size.height * 0.5, self.view.frame.size.width, self.view.frame.size.height * 0.5);
         self.mapView = [[RMMapView alloc] initWithFrame:frame andTilesource:tileSource];
-        NSDictionary *boundingBox = [NSJSONSerialization JSONObjectWithData:[self.detailItem[@"bounding_box"] dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&error];
+        // Set no expiry for offline caching of map tiles, probably not a great idea in practice!
+        self.mapView.tileCache = [[RMTileCache alloc] initWithExpiryPeriod:0];
+        NSDictionary *boundingBox = self.detailItem[@"bounding_box"];
         
         // Get coordinates for location
         float centerLon = ([boundingBox[@"coordinates"][0][0][0] floatValue] + [boundingBox[@"coordinates"][0][2][0] floatValue]) * 0.5;
@@ -80,6 +81,18 @@
         // Remove the title
         self.navigationItem.title = nil;
         
+        // Pop up a reminder that we're caching imagery tiles
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Caching on!" message:@"Your map tiles are being cached for offline use!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:nil];
+        UIAlertAction* clearAction = [UIAlertAction actionWithTitle:@"Clear cache" style:UIAlertActionStyleDestructive
+                                                              handler:^(UIAlertAction * _Nonnull action) {
+                                                                  [self.mapView removeAllCachedImages];
+                                                              }];
+        
+        [alert addAction:defaultAction];
+        [alert addAction:clearAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
